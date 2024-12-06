@@ -1,0 +1,11 @@
+.nav-link {
+  @apply flex items-center text-white transition py-4 px-6 rounded mb-2;
+}
+
+.nav-link i {
+  @apply h-4 w-4 mr-3;
+}
+
+.nav-link-active, .nav-link:hover {
+  @apply bg-[#233e33] text-[#5ec9a1];
+}

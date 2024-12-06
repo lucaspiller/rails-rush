@@ -1,0 +1,10 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "font-awesome/all";
+@import "font-awesome/solid";
+
+@import "nav";
+@import "buttons";
+@import "flash";
