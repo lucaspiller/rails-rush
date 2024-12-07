@@ -7,13 +7,33 @@
   </a>
 </div>
 
+<div class="relative w-full px-3 text-gray-300">
+  <%- if current_user.accounts.length > 1 %>
+    <button class="flex items-center justify-center gap-4 w-full hover:bg-gray-700 transition rounded py-4" data-dropdown-toggle="account-selector-dropdown">
+      <span class="font-bold"><%= current_account.name %></span>
+      <div>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </button>
+
+    <div id="account-selector-dropdown" class="z-10 hidden w-full px-4">
+      <div class="bg-gray-700 rounded-lg shadow text-white py-4 font-semibold flex flex-col gap-2">
+        <% current_user.accounts.each do |account| %>
+          <%= link_to account.name, dashboard_path(account_slug: account.slug), class: 'block px-8 py-4 hover:bg-gray-500' %>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <div class="flex items-center justify-center gap-4 w-full rounded py-4">
+      <span class="font-bold"><%= current_account.name %></span>
+    </div>
+  <% end %>
+</div>
+
 <nav class="p-3">
   <hr class="mt-4 mb-4">
 
-  <a href="#" class="nav-link">
-    <i class="fa-solid fa-house"></i>
-    <span>Dashboard</span>
-  </a>
+  <%= render NavItemComponent.new(icon: "fa-house", title: "Dashboard", path: dashboard_path, active_controllers: %w[dashboard]) %>
 
   <a href="#" class="nav-link">
     <i class="fa-solid fa-people-group"></i>
@@ -42,3 +62,21 @@
     <span>Help and Docs</span>
   </a>
 </nav>
+
+<div class="absolute bottom-0 w-full px-3 text-gray-300">
+  <button class="flex items-center justify-center gap-4 py-4 rounded mb-3 w-full hover:bg-gray-700" data-dropdown-toggle="user-settings-dropdown">
+    <div class="flex flex-col">
+      <span class="text-sm"><%= current_user.email.truncate(25) %></span>
+    </div>
+    <div>
+      <i class="fa-solid fa-chevron-up"></i>
+    </div>
+  </button>
+
+  <div id="user-settings-dropdown" class="z-10 hidden w-full px-4">
+    <div class="bg-gray-700 rounded-lg shadow text-white py-4 font-semibold flex flex-col gap-2">
+      <%= link_to "User Settings", edit_user_registration_path, class: 'block px-8 py-4 hover:bg-gray-500' %>
+      <%= link_to t(".sign_out"), destroy_user_session_path, data: { turbo_method: 'delete' }, class: 'block px-8 py-4 hover:bg-gray-500' %>
+    </div>
+  </div>
+</div>

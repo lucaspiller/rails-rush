@@ -162,6 +162,7 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
+    method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.25.4)
     msgpack (1.7.5)
@@ -356,6 +357,10 @@ GEM
       base58 (~> 0.2.3)
       securerandom (~> 0.3.0)
       zeitwerk (~> 2.5)
+    view_component (3.20.0)
+      activesupport (>= 5.2.0, < 8.1)
+      concurrent-ruby (~> 1.0)
+      method_source (~> 1.0)
     vite_rails (3.0.19)
       railties (>= 5.1, < 9)
       vite_ruby (~> 3.0, >= 3.2.2)
@@ -421,6 +426,7 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   uuid_v7 (~> 0.1.5)
+  view_component
   vite_rails (~> 3.0)
   web-console
 
