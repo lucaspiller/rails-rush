@@ -12,11 +12,11 @@ class ApplicationController < ActionController::Base
     @__current_account ||= begin
       account = if params[:account_slug]
                   Account.find_by(slug: params[:account_slug])
-                elsif session[:account_slug]
+      elsif session[:account_slug]
                   Account.find_by(slug: session[:account_slug])
-                else
+      else
                   current_user.accounts.first
-                end
+      end
 
       session[:account_slug] = account.try(:slug)
 

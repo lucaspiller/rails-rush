@@ -28,12 +28,12 @@ class Account < ApplicationRecord
     if slug.blank? && name.present?
       base_slug = name.parameterize
       new_slug = base_slug
-  
+
       while Account.where(slug: new_slug).exists?
         random_number = rand(1000..9999)
         new_slug = "#{base_slug}-#{random_number}"
       end
-  
+
       self.slug = new_slug
     end
   end

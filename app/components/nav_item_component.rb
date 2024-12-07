@@ -12,9 +12,9 @@ class NavItemComponent < ViewComponent::Base
   def before_render
     @active = if @controller_matches.is_a?(Regexp)
                 @controller_matches.match?(controller.controller_path)
-              else
+    else
                 @active_controllers.include?(controller.controller_path)
-              end
+    end
   end
 
   def call

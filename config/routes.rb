@@ -20,11 +20,11 @@ Rails.application.routes.draw do
   scope "/:account_slug" do
     root "dashboard#index", as: :dashboard
 
-    resource :account, only: [:edit, :update]
+    resource :account, only: [ :edit, :update ]
 
     resource :account_settings, only: [] do
-      resource :general, controller: "account_settings/general", only: [:edit, :update]
-      resource :site, controller: "account_settings/site", only: [:edit, :update]
+      resource :general, controller: "account_settings/general", only: [ :edit, :update ]
+      resource :site, controller: "account_settings/site", only: [ :edit, :update ]
     end
   end
 end

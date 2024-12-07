@@ -58,7 +58,7 @@ class CreateUsersAndAccounts < ActiveRecord::Migration[8.0]
       t.timestamps null: false
     end
 
-    add_index :accounts, [:slug], unique: true
+    add_index :accounts, [ :slug ], unique: true
 
     ###
     ### Account Users
@@ -73,7 +73,7 @@ class CreateUsersAndAccounts < ActiveRecord::Migration[8.0]
       t.timestamps null: false
     end
 
-    add_index :account_users, [:account_id, :user_id], unique: true
-    add_index :account_users, [:user_id, :account_id], unique: true
+    add_index :account_users, [ :account_id, :user_id ], unique: true
+    add_index :account_users, [ :user_id, :account_id ], unique: true
   end
 end
