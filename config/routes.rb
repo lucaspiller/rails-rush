@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root "dashboard#index"
 
@@ -12,4 +14,17 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  scope "/users" do
+  end
+
+  scope "/:account_slug" do
+    root "dashboard#index", as: :dashboard
+
+    resource :account, only: [:edit, :update]
+
+    resource :account_settings, only: [] do
+      resource :general, controller: "account_settings/general", only: [:edit, :update]
+      resource :site, controller: "account_settings/site", only: [:edit, :update]
+    end
+  end
 end

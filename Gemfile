@@ -55,6 +55,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
   gem "foreman"
+  gem "annotaterb"
 end
 
 group :test do
@@ -64,3 +65,6 @@ group :test do
 end
 
 gem "vite_rails", "~> 3.0"
+
+gem "uuid_v7", "~> 0.1.5"
+gem "devise", "~> 4.9"

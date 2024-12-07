@@ -21,14 +21,14 @@
 
   <body>
     <div class="flex sm:h-screen bg-stone-200">
-      <aside class="sm:relative sm:h-screen sm:w-[300px] hidden sm:block shadow-xl bg-slate-800">
+      <aside class="sm:relative sm:h-screen sm:w-[300px] hidden sm:block shadow-xl bg-gray-800">
         <%= render "shared/navbar" %>
       </aside>
       <div class="w-full sm:max-h-screen sm:relative sm:overflow-hidden">
         <main class="min-h-screen sm:h-screen sm:overflow-x-hidden sm:overflow-y-scroll pb-[40px]">
           <%= yield %>
         </main>
-        <footer class="sm:absolute sm:bottom-0 w-full -mt-[35px] h-[35px] bg-slate-600 flex justify-between items-center text-white text-sm">
+        <footer class="sm:absolute sm:bottom-0 w-full -mt-[35px] h-[35px] bg-gray-600 flex justify-between items-center text-white text-sm">
           <%= render "shared/footer" %>
         </footer>
       </div>

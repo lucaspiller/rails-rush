@@ -7,5 +7,5 @@
 }
 
 .nav-link-active, .nav-link:hover {
-  @apply bg-[#233e33] text-[#5ec9a1];
+  @apply bg-gray-700 text-white;
 }

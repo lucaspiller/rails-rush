@@ -1,0 +1,30 @@
+<% content_for :form_layout do %>
+  <header class="mb-6">
+    <h1 class="text-xl font-semibold mb-2">Log In</h1>
+    <p>Log in to your Rails Rush account</p>
+  </header>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <%= f.hidden_field :remember_me, value: true %>
+    <% end %>
+
+    <%= f.submit "Log in", class: "btn btn-primary btn-lg block w-full" %>
+  <% end %>
+
+  <hr class="my-6">
+
+  <%= render "devise/shared/links" %>
+<% end %>
+
+<%= render "devise/shared/form_layout" %>

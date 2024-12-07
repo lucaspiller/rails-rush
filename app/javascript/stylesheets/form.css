@@ -1,0 +1,52 @@
+.form-group {
+  @apply my-5;
+}
+
+.form-group label {
+  @apply block font-semibold mb-2;
+}
+
+.form-group p {
+  @apply mb-2;
+}
+
+.form-group em {
+  @apply block mt-1;
+}
+
+.form-group-red {
+  @apply bg-red-50;
+}
+
+input.form-control, select.form-control {
+  @apply border border-gray-300 rounded py-2 px-4 outline-none transition active:border-gray-900 focus:border-gray-900 hover:border-gray-900 h-10 block;
+}
+
+input.form-control {
+  @apply w-full;
+}
+
+select.form-control {
+  @apply bg-transparent;
+}
+
+textarea.form-control {
+  @apply border border-gray-300 rounded p-2 outline-none transition active:border-gray-900 focus:border-gray-900 hover:border-gray-900 block w-full;
+}
+
+input[type="color"].form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  @apply w-20 h-14 cursor-pointer px-0 py-0 border-none;
+}
+
+/* Note that these need to be seperate statements, if they are combined it doesn't work on Chrome */
+input[type="color"].form-control::-webkit-color-swatch {
+  @apply w-full h-full rounded;
+}
+
+input[type="color"].form-control::-moz-color-swatch {
+  @apply w-full h-full rounded;
+}
