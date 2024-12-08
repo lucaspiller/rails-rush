@@ -1,7 +1,3 @@
-<div class="w-full max-w-2xl mx-auto">
-  <%= render "shared/flash" %>
-
-  <div class="w-full bg-white rounded-lg shadow-lg p-6 mb-8">
-    <%= yield :form_layout %>
-  </div>
-</div>
+<%= render MainContentComponent.new do %>
+  <%= yield :form_layout %>
+<% end %>

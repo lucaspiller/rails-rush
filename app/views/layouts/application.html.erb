@@ -16,19 +16,19 @@
     <%= vite_stylesheet_tag 'application', data: { "turbo-track": "reload" } %>
     <%= vite_javascript_tag 'application' %>
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans" />
   </head>
 
   <body>
-    <div class="flex sm:h-screen bg-stone-200">
-      <aside class="sm:relative sm:h-screen sm:w-[300px] hidden sm:block shadow-xl bg-gray-800">
+    <div class="flex flex-col h-screen antialiased bg-white">
+      <aside class="w-64 border-r fixed left-0 top-0 h-screen overflow-y-auto text-gray-600">
         <%= render "shared/navbar" %>
       </aside>
-      <div class="w-full sm:max-h-screen sm:relative sm:overflow-hidden">
-        <main class="min-h-screen sm:h-screen sm:overflow-x-hidden sm:overflow-y-scroll pb-[40px]">
+      <div class="flex-1 ml-64 min-h-screen">
+        <main>
           <%= yield %>
         </main>
-        <footer class="sm:absolute sm:bottom-0 w-full -mt-[35px] h-[35px] bg-gray-600 flex justify-between items-center text-white text-sm">
+        <footer>
           <%= render "shared/footer" %>
         </footer>
       </div>

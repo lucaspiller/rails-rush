@@ -1,11 +1,23 @@
-.nav-link {
-  @apply flex items-center text-white transition py-4 px-6 rounded mb-2;
+.nav .nav-link {
+  @apply flex items-center transition py-4 px-6 rounded mb-2;
 }
 
-.nav-link i {
+.nav .nav-link i {
   @apply h-4 w-4 mr-3;
 }
 
-.nav-link-active, .nav-link:hover {
-  @apply bg-gray-700 text-white;
+.nav .nav-link-active, .nav .nav-link:hover {
+  @apply bg-gray-300;
+}
+
+.secondary-nav {
+  @apply mt-8 -mb-6 flex gap-6 font-semibold text-gray-600;
+}
+
+.secondary-nav .nav-link {
+  @apply border-b-2 border-transparent pb-2 transition px-6;
+}
+
+.secondary-nav .nav-link:hover, .secondary-nav .nav-link-active {
+  @apply text-blue-500 border-blue-500;
 }

@@ -2,7 +2,7 @@
 
 class MainContentComponent < ViewComponent::Base
   erb_template <<~ERB
-    <div class="w-full px-8 max-w-screen-2xl mx-auto overflow-scroll">
+    <div class="px-8">
       <%= render "shared/flash" %>
 
       <%= content %>

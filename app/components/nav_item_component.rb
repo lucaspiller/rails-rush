@@ -1,7 +1,16 @@
 # frozen_string_literal: true
 
 class NavItemComponent < ViewComponent::Base
-  def initialize(title:, path:, icon:, active_controllers: [], controller_matches: nil)
+  erb_template <<~ERB
+    <a href="<%= @path %>" class="nav-link <%= @active ? 'nav-link-active' : '' %>">
+      <%- if @icon %>
+      <i class="fa-solid <%= @icon %>"></i>
+      <%- end %>
+      <span><%= @title %></span>
+    </a>
+ERB
+
+  def initialize(title:, path:, icon: nil, active_controllers: [], controller_matches: nil)
     @title = title
     @path = path
     @icon = icon
@@ -14,12 +23,6 @@ class NavItemComponent < ViewComponent::Base
                 @controller_matches.match?(controller.controller_path)
     else
                 @active_controllers.include?(controller.controller_path)
-    end
-  end
-
-  def call
-    link_to @path, class: "nav-link #{@active ? 'nav-link-active' : ''}" do
-      "<i class=\"fa-solid #{@icon}\"></i><span>#{@title}</span>".html_safe
     end
   end
 end

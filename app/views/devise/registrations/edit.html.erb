@@ -1,14 +1,11 @@
-<%= render TopNavComponent.new do |component| %>
-  <% component.with_breadcrumb "User Settings", edit_user_registration_path %>
-  <% component.with_breadcrumb "General" %>
+<%= render PageHeaderComponent.new(title: "Settings") do %>
+  <%= render 'settings/navbar' %>
 <% end %>
-
-<%= render 'shared/users_navbar' %>
 
 <% content_for :form_layout do %>
   <header class="mb-4">
-    <h1 class="text-xl font-semibold mb-2">General Settings</h1>
-    <p class="font-light">Change your account settings</p>
+    <h1 class="text-xl font-semibold mb-2">Profile</h1>
+    <p class="font-light">Change your profile settings</p>
   </header>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>

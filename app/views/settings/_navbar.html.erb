@@ -1,0 +1,4 @@
+<nav class="secondary-nav">
+  <%= render NavItemComponent.new(title: "Account", path: edit_settings_account_path, active_controllers: ['settings/account']) %>
+  <%= render NavItemComponent.new(title: "Profile", path: edit_user_registration_path, active_controllers: ['devise/registrations']) %>
+</nav>
