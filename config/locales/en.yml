@@ -30,3 +30,9 @@
 en:
   form:
     save_changes: "Save Changes"
+  activerecord:
+    attributes:
+      user:
+        password: 'New Password'
+        password_confirmation: 'Confirm New Password'
+        current_password: 'Current Password'

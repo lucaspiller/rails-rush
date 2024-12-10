@@ -11,11 +11,12 @@
   <%= form_with(model: current_account, url: settings_account_path) do |form| %>
     <%= render "shared/error_messages", resource: form.object %>
 
-    <div class="form-group">
-      <%= form.label :name %>
-      <%= form.text_field :name, class: "form-control" %>
-    </div>
-  
+    <%= render FormSectionComponent.new(title: 'Account Name') do %>
+      <div class="form-group">
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+    <% end %>
+
     <div class="flex justify-end">
       <%= form.submit t('form.save_changes'), class: "btn btn-primary" %>
     </div>

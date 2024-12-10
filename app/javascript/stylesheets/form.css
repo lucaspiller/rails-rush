@@ -1,5 +1,5 @@
 .form-group {
-  @apply my-5;
+  @apply mb-5;
 }
 
 .form-group label {
